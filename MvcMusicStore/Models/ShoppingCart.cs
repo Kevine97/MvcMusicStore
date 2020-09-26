@@ -10,12 +10,16 @@ namespace MvcMusicStore.Models
         MusicStoreEntities storeDB = new MusicStoreEntities();
         string ShoppingCartId { get; set; }
         public const string CartSessionKey = "CartId";
+
+
         public static ShoppingCart GetCart(HttpContextBase context)
         {
             var cart = new ShoppingCart();
             cart.ShoppingCartId = cart.GetCartId(context);
             return cart;
         }
+
+
 
         // Helper method to simplify shopping cart calls
         public static ShoppingCart GetCart(Controller controller)
@@ -48,7 +52,7 @@ namespace MvcMusicStore.Models
             // Save changes
             storeDB.SaveChanges();
         }
-
+       
         public int RemoveFromCart(int id)
         {
             // Get the cart

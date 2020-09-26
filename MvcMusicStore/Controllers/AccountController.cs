@@ -12,7 +12,6 @@ namespace Mvc3ToolsUpdateWeb_Default.Controllers
 {
     public class AccountController : Controller
     {
-
         private void MigrateShoppingCart(string UserName)
         {
             // Associate shopping cart items with logged-in user
@@ -54,10 +53,10 @@ namespace Mvc3ToolsUpdateWeb_Default.Controllers
                 {
                     ModelState.AddModelError("", "The user name or password provided is incorrect.");
                 }
-              }
-             // If we got this far, something failed, redisplay form
-                    return View(model);
-                }
+                 }
+            // If we got this far, something failed, redisplay form
+                return View(model);
+             }
 
         //
         // GET: /Account/LogOff
